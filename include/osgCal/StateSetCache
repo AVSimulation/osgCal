@@ -119,7 +119,7 @@ namespace osgCal
             Map cache;
             
             osg::Texture2D* createTexture( const TextureDesc& fileName )
-                throw (std::runtime_error);
+                throw();
     };
 
     class SwMeshStateSetCache : public osg::Referenced

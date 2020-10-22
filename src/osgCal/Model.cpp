@@ -536,7 +536,7 @@ Model::getCoreModel() const
 }
 
 const Model::MeshesList&
-Model::getMeshes( const std::string& name ) const throw (std::runtime_error)
+Model::getMeshes( const std::string& name ) const throw ()
 {
     MeshMap::const_iterator i = meshes.find( name );
 

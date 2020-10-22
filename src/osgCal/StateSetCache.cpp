@@ -98,7 +98,7 @@ getOrCreate( Map&                                map,
              Class*                              obj,
              typename Map::mapped_type   ( Class::*create )( const typename Map::key_type& ) )
 {
-	Map::mapped_type res;
+	typename Map::mapped_type res;
 
 	obj->mutex.lock();
     typename Map::const_iterator i = map.find( key );
@@ -154,7 +154,7 @@ TexturesCache::get( const TextureDesc& td )
 
 osg::Texture2D*
 TexturesCache::createTexture( const TextureDesc& fileName )
-    throw ( std::runtime_error )
+    throw ()
 {
 //    std::cout << "load texture: " << fileName << std::endl;
     osg::Image* img = osgDB::readImageFile( fileName );

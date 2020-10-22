@@ -211,7 +211,7 @@ namespace osgCal {
              * Return list of meshes corresponding to specified name.
              */
             const MeshesList& getMeshes( const std::string& name ) const
-                throw (std::runtime_error);
+                throw ();
 
             const MeshMap& getMeshMap() const { return meshes; }
 

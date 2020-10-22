@@ -50,12 +50,12 @@ namespace osgCal
              */
             void load( const std::string& cfgFileName,
                        MeshParametersSelector* p = 0,
-					   const std::string& meshCacheFile = std::string() ) throw (std::runtime_error);
+					   const std::string& meshCacheFile = std::string() ) throw();
 
             void load( const std::string& cfgFileName,
                        MeshParameters* p,
 					   const std::string& meshCacheFile = std::string()
-					    ) throw (std::runtime_error)
+					    ) throw ()
             {
                 load( cfgFileName, new ConstMeshParametersSelector( p ) );
             }
@@ -103,7 +103,7 @@ namespace osgCal
     OSGCAL_EXPORT CalCoreModel* loadCoreModel( const std::string& cfgFileName,
                                                float& scale,
                                                bool ignoreMeshes = false )
-        throw (std::runtime_error);
+        throw ();
 
 }; // namespace osgCal
 

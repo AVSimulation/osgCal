@@ -325,7 +325,7 @@ generateTangentAndHandednessBuffer( osgCal::MeshData* m,
 void
 loadMeshes( CalCoreModel* calCoreModel,
             MeshesVector& meshes )
-    throw (std::runtime_error)
+    throw ()
 {
     const int maxVertices = Constants::MAX_VERTEX_PER_MODEL;
     const int maxFaces    = Constants::MAX_VERTEX_PER_MODEL * 3;
@@ -722,7 +722,7 @@ void
 loadMeshes( const std::string&  fn,
             const CalCoreModel* calCoreModel,
             MeshesVector& meshes )
-    throw (std::runtime_error)
+    throw ()
 {
     FILE* f = fopen( fn.c_str(), "rb" );
 
@@ -818,7 +818,7 @@ getCoreMaterialThreadId( CalCoreModel* model,
 void saveMeshes( const CalCoreModel* calCoreModel,
                  const MeshesVector& meshes,
                  const std::string&  fn )
-    throw (std::runtime_error)
+    throw ()
 {
     FILE* f = fopen( fn.c_str(), "wb" );
 

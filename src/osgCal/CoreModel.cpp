@@ -98,7 +98,7 @@ isFileExists( const std::string& f )
 void
 CoreModel::load( const std::string& cfgFileNameOriginal,
                  MeshParametersSelector* _ps,
-				 const std::string& meshCacheFile) throw (std::runtime_error)
+				 const std::string& meshCacheFile) throw ()
 {
     if ( calCoreModel )
     {
@@ -236,7 +236,7 @@ CalCoreModel*
 osgCal::loadCoreModel( const std::string& cfgFileName,
                        float& scale,
                        bool ignoreMeshes )
-    throw (std::runtime_error)
+    throw ()
 {
     // -- Initial loading of model --
     scale = 1.0f;
