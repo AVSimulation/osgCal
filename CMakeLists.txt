@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.11)
 
-PROJECT(osgCal)
+PROJECT(osgCal VERSION 0.3.1)
 
 # Dynamic vs Static Linking
 OPTION(DYNAMIC_OPENSCENEGRAPH "Set to ON to build OpenSceneGraph for dynamic linking.  Use OFF for static." ON)
@@ -59,3 +59,20 @@ SET(WRAPPER_PREFIX  osgwrapper_)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(applications)
 
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/osgcalConfig.cmake DESTINATION "share/osgcal")
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(${CMAKE_BINARY_DIR}/cmake/osgcalConfigVersion.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion)
+install(FILES ${CMAKE_BINARY_DIR}/cmake/osgcalConfigVersion.cmake
+    DESTINATION "share/osgcal")
+
+install(EXPORT osgcal-export
+  FILE
+  	osgcalTargets.cmake
+  NAMESPACE
+  	osgcal::
+  DESTINATION
+    share/osgcal
+)
