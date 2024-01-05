@@ -387,7 +387,7 @@ namespace osgCal {
              * Returns associated model, throws error if the model was deleted.
              */
             Model* getModel()
-                throw (std::runtime_error);
+                throw ();
 
             void setUpdateForced()
             {

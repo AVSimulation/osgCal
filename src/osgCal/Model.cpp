@@ -633,7 +633,7 @@ ModelData::~ModelData()
 
 Model*
 ModelData::getModel()
-    throw (std::runtime_error)
+    throw ()
 {
     if ( model.valid() )
     {
